@@ -1,5 +1,10 @@
 export default grammar({
-	name: "cred",
+  name: "cred",
+  extras: ($) => [
+    // NEWLINE,
+    /\s/,
+    $.comment,
+  ],
   rules: {
     block: $ => prec(100,choice(seq($.statement, optional($.block)))),
 		statement: $ => prec(99,choice(seq($.interface),seq($.enum),seq($.def),seq($.struct),seq($.include),seq($.dowhile, $.SEMICOLON),seq($.whileloop),seq($.conditional),seq($.switch),seq($.funcdec),seq($.LBRACE, optional($.block), $.RBRACE),seq($.forloop),seq($.jump, $.SEMICOLON),seq($.return, $.SEMICOLON),seq($.chain, $.SEMICOLON),seq($.assignment, $.SEMICOLON),seq($.declaration, $.SEMICOLON),seq($.label),seq($.funccall, $.SEMICOLON))),
@@ -63,5 +68,6 @@ export default grammar({
     LBRACKET: $ => "[",
     COMMA: $ => ",",
     DOT: $ => ",",
+    comment: ($) => token(prec(200, seq("//", /.*/))),
   },
 });

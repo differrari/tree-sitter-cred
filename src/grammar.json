@@ -2625,12 +2625,36 @@
     "DOT": {
       "type": "STRING",
       "value": ","
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 200,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "//"
+            },
+            {
+              "type": "PATTERN",
+              "value": ".*"
+            }
+          ]
+        }
+      }
     }
   },
   "extras": [
     {
       "type": "PATTERN",
       "value": "\\s"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [],

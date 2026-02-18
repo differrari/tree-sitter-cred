@@ -1393,6 +1393,11 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
     "type": "defer",
     "named": false
   },
