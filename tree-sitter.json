@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "cred_parser",
+      "camelcase": "CredParser",
+      "title": "Cred Parser",
+      "scope": "source.cred_parser",
+      "file-types": [
+        "cred"
+      ],
+      "injection-regex": "^cred_parser$",
+      "class-name": "TreeSitterCredParser"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "GPL2",
+    "description": "Parser for the Cred language",
+    "authors": [
+      {
+        "name": "Di",
+        "email": "git@diferrari.com",
+        "url": "diferrari.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-cred_parser",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "java": false,
+    "node": false,
+    "python": false,
+    "rust": false,
+    "swift": false,
+    "zig": false
+  }
+}

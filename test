@@ -1,0 +1,109 @@
+@includeC("random.h")
+@includeC("ing.h")
+
+literal heyo(){
+    return "Value";
+}
+
+bool credbuild {
+    redb_mod module = new_module("cred");
+	
+	set_name(&module, "credgen");
+
+	set_target(&module,target_native);
+
+	&module.source_all(".cred");
+
+	return module.cred_compile();
+	
+	switch (hello) {
+	    case 1: {print("1");}
+		case 2: {print("22"); }
+		case 3: {print("3"); }
+		// case 2 => {print("1"); }
+	 //    2 => {print("1"); }
+	}
+	
+}
+
+int a {
+    chunk_array:int *testarr;
+    
+    literal ly = "like";
+    
+    int test = 0;
+    testarr = chunk_array_create(12,sizeof(int));
+    int x = testarr[0];
+    testarr.push(0);
+}
+
+void draw(int x, int y, int color, int overwrite) { int b = 0; }
+
+c(int x) { int l; if (x) { return 0; } }
+void print(){
+
+}
+
+int t = u + i;
+
+enum test_enum {
+    one, 
+    two, 
+    three  
+}
+
+interface hello {
+    int func(int rule, Token elem);
+    test;
+}
+
+struct testType: hello {
+    
+    func(int rule, Token elem) { 
+        int a = 0;
+    }
+    
+    test {
+        print("Test succeeded %i",prop1);
+    }
+    
+    helper {
+        
+    }
+    
+    int prop1;
+    int prop2;
+}
+
+int main {
+    int y = a();
+    int x = 1-(0-2);
+    int z = x[0];
+    {
+        print("This is democracy manifest");
+    }
+    defer {
+        cleanup();
+    }
+    defer x = 0;
+    for (int i = 0; i < 10; i = i + 1){
+    }
+    while (0){
+        print();
+    }
+    return 0;
+    do {
+        print();
+    } while(0);
+        draw(x, y, 0xFF00FF00, overwrite: 0);
+        x = x + 1;
+        x = y.run();
+        if (x < 100) {  } else { print("Done with x"); }
+    y = y + 1;
+    if y < 100 { } else if (y == 100) { print("Exactly 100 y"); }
+    print();
+    
+    traverse_directory(s.data, recursive: true, int (literal directory, literal name){
+        print("Inside lambda");
+    });
+}
