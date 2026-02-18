@@ -1,12 +1,13 @@
+import hardcoded_rules from './hardcoded.js';
+
 export default grammar({
-  name: "cred",
-  extras: ($) => [
-    // NEWLINE,
-    /\s/,
-    $.comment,
-  ],
-  rules: {
-    block: $ => prec(100,choice(seq($.statement, optional($.block)))),
+	name: "cred",
+	extras: ($) => [
+		// NEWLINE,
+		/\s/,
+		$.comment,
+	],rules: {
+		block: $ => prec(100,choice(seq($.statement, optional($.block)))),
 		statement: $ => prec(99,choice(seq($.interface),seq($.enum),seq($.def),seq($.struct),seq($.include),seq($.dowhile, $.SEMICOLON),seq($.whileloop),seq($.conditional),seq($.switch),seq($.funcdec),seq($.LBRACE, optional($.block), $.RBRACE),seq($.forloop),seq($.jump, $.SEMICOLON),seq($.return, $.SEMICOLON),seq($.chain, $.SEMICOLON),seq($.assignment, $.SEMICOLON),seq($.declaration, $.SEMICOLON),seq($.label),seq($.funccall, $.SEMICOLON))),
 		def: $ => prec(98,choice(seq("defer", $.statement))),
 		include: $ => prec(97,choice(seq($.SYMBOL, "includeC", $.LPAREN, $.inc, $.RPAREN),seq($.SYMBOL, "include", $.inc))),
@@ -53,21 +54,6 @@ export default grammar({
 		var: $ => prec(56,choice(seq($.IDENTIFIER))),
 		parent: $ => prec(55,choice(seq($.IDENTIFIER))),
 		literals: $ => prec(54,choice(seq("defer"),seq("includeC"),seq("include"),seq("if"),seq("else"),seq("goto"),seq("not"),seq("for"),seq("while"),seq("do"),seq("enum"),seq("struct"),seq("return"),seq("interface"),seq("switch"),seq("case"))),
-		SYMBOL: $ => choice("#", "@"),
-    SEMICOLON: $ => ";",
-    RPAREN: $ => ")",
-    LPAREN: $ => "(",
-    NEWLINE: $ => "\n",
-    CONST: $ => choice(new RustRegex('"[^"]*"'), new RustRegex("[0-9_]+")),
-    IDENTIFIER: $ => new RustRegex('[a-z_][a-z0-9_]*'),
-    OPERATOR: $ => choice(">>>", "<<=", ">>=", "===", "==", "!=", "<=", ">=", "&&", "||", "<<", ">>", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "::", "->", "+", "-", "*", "/", "%", "=", "<",">","!","&","|","^","~","?"),
-    COLON: $ => ":",
-    RBRACE: $ => "}",
-    LBRACE: $ => "{",
-    RBRACKET: $ => "]",
-    LBRACKET: $ => "[",
-    COMMA: $ => ",",
-    DOT: $ => ",",
-    comment: ($) => token(prec(200, seq("//", /.*/))),
-  },
+		...hardcoded_rules
+	}
 });

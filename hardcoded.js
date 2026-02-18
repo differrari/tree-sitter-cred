@@ -1,0 +1,18 @@
+export default {
+  SYMBOL: $ => choice("#", "@"),
+  SEMICOLON: $ => ";",
+  RPAREN: $ => ")",
+  LPAREN: $ => "(",
+  NEWLINE: $ => "\n",
+  CONST: $ => choice(new RustRegex('"[^"]*"'), new RustRegex("[0-9_]+")),
+  IDENTIFIER: $ => new RustRegex('[a-z_][a-z0-9_]*'),
+  OPERATOR: $ => choice(">>>", "<<=", ">>=", "===", "==", "!=", "<=", ">=", "&&", "||", "<<", ">>", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "::", "->", "+", "-", "*", "/", "%", "=", "<", ">", "!", "&", "|", "^", "~", "?"),
+  COLON: $ => ":",
+  RBRACE: $ => "}",
+  LBRACE: $ => "{",
+  RBRACKET: $ => "]",
+  LBRACKET: $ => "[",
+  COMMA: $ => ",",
+  DOT: $ => ",",
+  comment: ($) => token(prec(200, seq("//", /.*/))),
+};
