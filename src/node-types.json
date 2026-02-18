@@ -37,11 +37,15 @@
           "named": true
         },
         {
-          "type": "IDENTIFIER",
+          "type": "argdec",
           "named": true
         },
         {
-          "type": "argdec",
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -149,11 +153,11 @@
       "required": true,
       "types": [
         {
-          "type": "DOT",
+          "type": "funccall",
           "named": true
         },
         {
-          "type": "funccall",
+          "type": "op",
           "named": true
         },
         {
@@ -257,15 +261,23 @@
           "named": true
         },
         {
-          "type": "IDENTIFIER",
-          "named": true
-        },
-        {
           "type": "OPERATOR",
           "named": true
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "subtype",
+          "named": true
+        },
+        {
+          "type": "type",
           "named": true
         }
       ]
@@ -349,10 +361,6 @@
       "required": true,
       "types": [
         {
-          "type": "IDENTIFIER",
-          "named": true
-        },
-        {
           "type": "LBRACE",
           "named": true
         },
@@ -362,6 +370,10 @@
         },
         {
           "type": "enumcase",
+          "named": true
+        },
+        {
+          "type": "name",
           "named": true
         }
       ]
@@ -380,11 +392,11 @@
           "named": true
         },
         {
-          "type": "IDENTIFIER",
+          "type": "enumcase",
           "named": true
         },
         {
-          "type": "enumcase",
+          "type": "name",
           "named": true
         }
       ]
@@ -398,10 +410,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "CONST",
-          "named": true
-        },
         {
           "type": "LPAREN",
           "named": true
@@ -428,6 +436,10 @@
         },
         {
           "type": "math",
+          "named": true
+        },
+        {
+          "type": "val",
           "named": true
         },
         {
@@ -485,6 +497,21 @@
     }
   },
   {
+    "type": "func",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "funcarguments",
     "named": true,
     "fields": {},
@@ -516,10 +543,6 @@
       "required": true,
       "types": [
         {
-          "type": "IDENTIFIER",
-          "named": true
-        },
-        {
           "type": "LPAREN",
           "named": true
         },
@@ -529,6 +552,10 @@
         },
         {
           "type": "argument",
+          "named": true
+        },
+        {
+          "type": "func",
           "named": true
         }
       ]
@@ -542,10 +569,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "IDENTIFIER",
-          "named": true
-        },
         {
           "type": "LBRACE",
           "named": true
@@ -561,6 +584,14 @@
         {
           "type": "funcarguments",
           "named": true
+        },
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
         }
       ]
     }
@@ -574,11 +605,30 @@
       "required": true,
       "types": [
         {
-          "type": "IDENTIFIER",
+          "type": "funcarguments",
           "named": true
         },
         {
-          "type": "funcarguments",
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inc",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "CONST",
           "named": true
         }
       ]
@@ -593,10 +643,6 @@
       "required": true,
       "types": [
         {
-          "type": "CONST",
-          "named": true
-        },
-        {
           "type": "LPAREN",
           "named": true
         },
@@ -606,6 +652,10 @@
         },
         {
           "type": "SYMBOL",
+          "named": true
+        },
+        {
+          "type": "inc",
           "named": true
         }
       ]
@@ -647,10 +697,6 @@
       "required": true,
       "types": [
         {
-          "type": "IDENTIFIER",
-          "named": true
-        },
-        {
           "type": "LBRACE",
           "named": true
         },
@@ -660,6 +706,25 @@
         },
         {
           "type": "intblock",
+          "named": true
+        },
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "jmp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
           "named": true
         }
       ]
@@ -674,7 +739,7 @@
       "required": true,
       "types": [
         {
-          "type": "IDENTIFIER",
+          "type": "jmp",
           "named": true
         }
       ]
@@ -693,7 +758,7 @@
           "named": true
         },
         {
-          "type": "IDENTIFIER",
+          "type": "name",
           "named": true
         }
       ]
@@ -707,10 +772,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "IDENTIFIER",
-          "named": true
-        },
         {
           "type": "LBRACE",
           "named": true
@@ -734,6 +795,10 @@
         {
           "type": "block",
           "named": true
+        },
+        {
+          "type": "type",
+          "named": true
         }
       ]
     }
@@ -747,10 +812,6 @@
       "required": true,
       "types": [
         {
-          "type": "CONST",
-          "named": true
-        },
-        {
           "type": "OPERATOR",
           "named": true
         },
@@ -763,7 +824,56 @@
           "named": true
         },
         {
+          "type": "val",
+          "named": true
+        },
+        {
           "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "DOT",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parent",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
           "named": true
         }
       ]
@@ -896,10 +1006,6 @@
           "named": true
         },
         {
-          "type": "IDENTIFIER",
-          "named": true
-        },
-        {
           "type": "LBRACE",
           "named": true
         },
@@ -909,6 +1015,29 @@
         },
         {
           "type": "decblock",
+          "named": true
+        },
+        {
+          "type": "name",
+          "named": true
+        },
+        {
+          "type": "parent",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "subtype",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
           "named": true
         }
       ]
@@ -985,6 +1114,51 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "val",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "CONST",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "IDENTIFIER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "variable",
     "named": true,
     "fields": {},
@@ -992,10 +1166,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "IDENTIFIER",
-          "named": true
-        },
         {
           "type": "LBRACKET",
           "named": true
@@ -1006,6 +1176,10 @@
         },
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "var",
           "named": true
         }
       ]
