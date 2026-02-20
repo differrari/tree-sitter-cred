@@ -5,7 +5,7 @@ export default {
   LPAREN: $ => "(",
   NEWLINE: $ => "\n",
   CONST: $ => choice(new RustRegex('"[^"]*"'), new RustRegex("-?(0[bx])?[0-9]+")),
-  IDENTIFIER: $ => new RustRegex('[a-z_][a-z0-9_]*'),
+  IDENTIFIER: $ => new RustRegex('[a-zA-Z_][a-zA-Z0-9_]*'),
   OPERATOR: $ => choice(">>>", "<<=", ">>=", "===", "==", "!=", "<=", ">=", "&&", "||", "<<", ">>", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "::", "->", "+", "-", "*", "/", "%", "=", "<", ">", "!", "&", "|", "^", "~", "?"),
   COLON: $ => ":",
   RBRACE: $ => "}",
