@@ -2447,7 +2447,7 @@
     },
     "IDENTIFIER": {
       "type": "PATTERN",
-      "value": "[a-z_][a-z0-9_]*"
+      "value": "[a-zA-Z_][a-zA-Z0-9_]*"
     },
     "OPERATOR": {
       "type": "CHOICE",
